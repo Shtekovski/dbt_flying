@@ -42,11 +42,40 @@ sources:
             description: Дата брони
           - name: total_amount
             description: Сумма
-        freshness:
-          warn_after:
-            count: 6000000
-            period: hour
-          error_after:
-            count: 100000
-            period: day
-        loaded_at_field: book_date::timestamp
+      - name: boarding_passes
+        description: Посадочные талоны
+        columns:
+          - name: ticket_no
+            description: Номер билета
+          - name: flight_id
+          - name: boarding_no
+          - name: seat_no
+            description: Номер места
+      - name: flights
+        description: Рейсы
+        columns:
+          - name: flight_id
+          - name: flight_no
+          - name: scheduled_departure
+          - name: scheduled_arrival
+          - name: departure_airport
+          - name: arrival_airport
+          - name: status
+          - name: aircraft_code
+          - name: actual_departure
+          - name: actual_arrival
+      - name: ticket_flights
+        description: Билеты
+        columns:
+          - name: ticket_no
+          - name: flight_id
+          - name: fare_conditions
+          - name: amount
+      - name: tickets
+        description: Бронирования
+        columns:
+          - name: ticket_no
+          - name: book_ref
+          - name: passenger_id
+          - name: passenger_name
+          - name: contact_data

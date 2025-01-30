@@ -1,0 +1,21 @@
+models:
+  - name: fct_flights__bookings
+    description: Бронирования билетов
+    docs:
+      show: true
+      node_color: red
+    latest_version: 1
+    versions:
+      - v: 1
+    config:
+      contract: {enforced: true}
+    
+    columns:
+      - name: book_ref
+        data_type: bpchar(6)
+        constraints:
+          - type: not_null
+      - name: book_date
+        data_type: timestamptz
+      - name: total_amount
+        data_type: numeric(10,2)
