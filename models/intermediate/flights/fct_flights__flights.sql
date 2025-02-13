@@ -11,7 +11,7 @@ select
     scheduled_arrival,
     departure_airport,
     arrival_airport,
-    "status",
+    status,
     aircraft_code,
     actual_departure,
     actual_arrival
